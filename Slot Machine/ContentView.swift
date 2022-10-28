@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var showingInfoView: Bool = false
+    
     var body: some View {
         
         VStack {
@@ -147,6 +149,7 @@ struct ContentView: View {
                 )
                 .overlay(
                     Button(action: {
+                        showingInfoView = true
                         print("Info View")
                     }, label: {
                         Image(systemName: "info.circle")
@@ -159,6 +162,7 @@ struct ContentView: View {
                 .padding()
                 .frame(maxWidth: 720)
             }
+            .sheet(isPresented: $showingInfoView, content: InfoView())
         }
     }
 }
