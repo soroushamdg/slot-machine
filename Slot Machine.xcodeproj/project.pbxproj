@@ -20,6 +20,9 @@
 		903F7C3D290C8DB5006F23DF /* background-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 903F7C35290C8DB5006F23DF /* background-music.mp3 */; };
 		903F7C3E290C8DB5006F23DF /* chimeup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 903F7C36290C8DB5006F23DF /* chimeup.mp3 */; };
 		903F7C43290C8DE8006F23DF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903F7C42290C8DE8006F23DF /* Launch Screen.storyboard */; };
+		903F7C45290C91D2006F23DF /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F7C44290C91D2006F23DF /* LogoView.swift */; };
+		903F7C47290C91F4006F23DF /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F7C46290C91F4006F23DF /* Modifiers.swift */; };
+		903F7C49290C9428006F23DF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F7C48290C9428006F23DF /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		903F7C35290C8DB5006F23DF /* background-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-music.mp3"; sourceTree = "<group>"; };
 		903F7C36290C8DB5006F23DF /* chimeup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chimeup.mp3; sourceTree = "<group>"; };
 		903F7C42290C8DE8006F23DF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		903F7C44290C91D2006F23DF /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		903F7C46290C91F4006F23DF /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		903F7C48290C9428006F23DF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,8 @@
 		903F7C40290C8DD3006F23DF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				903F7C46290C91F4006F23DF /* Modifiers.swift */,
+				903F7C48290C9428006F23DF /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -114,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				903F7C42290C8DE8006F23DF /* Launch Screen.storyboard */,
+				903F7C44290C91D2006F23DF /* LogoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,7 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				903F7C49290C9428006F23DF /* Extensions.swift in Sources */,
+				903F7C47290C91F4006F23DF /* Modifiers.swift in Sources */,
 				903F7C24290C8C4E006F23DF /* ContentView.swift in Sources */,
+				903F7C45290C91D2006F23DF /* LogoView.swift in Sources */,
 				903F7C22290C8C4E006F23DF /* Slot_MachineApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
