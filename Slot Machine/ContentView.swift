@@ -45,6 +45,51 @@ struct ContentView: View {
                         .modifier(ScoreContainerModifier())
 
                     }
+                    
+                    VStack(alignment: .center,spacing: 0) {
+                        // reel #1
+                        ZStack{
+                            RealView()
+                            Image("gfx-bell")
+                                .resizable()
+                                .modifier(ImageModifier())
+                        }
+                        
+                        HStack(alignment: .center,spacing: 0) {
+                            // reel 2
+                            ZStack{
+                                RealView()
+                                Image("gfx-bell")
+                                    .resizable()
+                                    .modifier(ImageModifier())
+                            }
+                            
+                            Spacer()
+                            // reel 3
+                            ZStack{
+                                RealView()
+                                Image("gfx-bell")
+                                    .resizable()
+                                    .modifier(ImageModifier())
+                            }
+                        }
+                        .frame(maxWidth: 500)
+                        // reel #2
+                        
+                        // spin button
+                        Button {
+                            print("SPIN THE Reels")
+                        } label: {
+                            Image("gfx-spin")
+                                .renderingMode(.original)
+                                .resizable()
+                                .modifier(ImageModifier())
+                        }
+
+                        
+                    }// slot machine
+                    .layoutPriority(2)
+                    
                     Spacer()
                 }
                 .overlay(
