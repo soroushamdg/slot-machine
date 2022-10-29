@@ -110,7 +110,6 @@ struct ContentView: View {
                         Spacer()
                         
                         HStack{
-                            
                             Text("\(highscore)")
                                 .scoreNumberStyle()
                                 .modifier(ScoreNumberModifier())
@@ -119,7 +118,6 @@ struct ContentView: View {
                                 .multilineTextAlignment(.trailing)
                         }
                         .modifier(ScoreContainerModifier())
-
                     }
                     
                     VStack(alignment: .center,spacing: 0) {
