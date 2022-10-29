@@ -49,6 +49,7 @@
 		903F7C4A290C98C6006F23DF /* RealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealView.swift; sourceTree = "<group>"; };
 		903F7C4C290CA242006F23DF /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		90B0BA6E290DC6F400726D37 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
+		90B0BA70290DD44300726D37 /* Slot-Machine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Slot-Machine-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 		903F7C20290C8C4E006F23DF /* Slot Machine */ = {
 			isa = PBXGroup;
 			children = (
+				90B0BA70290DD44300726D37 /* Slot-Machine-Info.plist */,
 				903F7C41290C8DDA006F23DF /* Views */,
 				903F7C40290C8DD3006F23DF /* Helpers */,
 				903F7C21290C8C4E006F23DF /* Slot_MachineApp.swift */,
@@ -354,6 +356,7 @@
 				DEVELOPMENT_TEAM = 6U8HRYAE4R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Slot-Machine-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -386,6 +389,7 @@
 				DEVELOPMENT_TEAM = 6U8HRYAE4R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Slot-Machine-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
