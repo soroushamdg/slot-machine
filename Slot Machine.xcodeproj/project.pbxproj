@@ -82,7 +82,6 @@
 				903F7C41290C8DDA006F23DF /* Views */,
 				903F7C40290C8DD3006F23DF /* Helpers */,
 				903F7C21290C8C4E006F23DF /* Slot_MachineApp.swift */,
-				903F7C23290C8C4E006F23DF /* ContentView.swift */,
 				903F7C25290C8C4F006F23DF /* Assets.xcassets */,
 				903F7C3F290C8DC5006F23DF /* Sounds */,
 				903F7C27290C8C4F006F23DF /* Preview Content */,
@@ -129,6 +128,7 @@
 				903F7C44290C91D2006F23DF /* LogoView.swift */,
 				903F7C4A290C98C6006F23DF /* RealView.swift */,
 				903F7C4C290CA242006F23DF /* InfoView.swift */,
+				903F7C23290C8C4E006F23DF /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
