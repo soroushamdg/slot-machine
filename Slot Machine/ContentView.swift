@@ -9,7 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     
+    let symbols = ["gfx-bell","gfx-cherry","gfx-coin","gfx-grape","gfx-seven","gfx-strawberry"]
+    
+    @State private var reels : Array = [0,1,2]
     @State private var showingInfoView: Bool = false
+    
+    
+    // functions
+    
+    func spinReels(){
+        reels[0] = Int.random(in: 0...symbols.count - 1)
+        reels[1] = Int.random(in: 0...symbols.count - 1)
+        reels[2] = Int.random(in: 0...symbols.count - 1)
+    }
+    
+    // check winning
+    
+    // player wins
+    
+    // new high score
+    
+    // player loses
+    
+    // game is over
+    
     
     var body: some View {
         
@@ -52,7 +75,7 @@ struct ContentView: View {
                         // reel #1
                         ZStack{
                             RealView()
-                            Image("gfx-bell")
+                            Image(symbols[reels[0]])
                                 .resizable()
                                 .modifier(ImageModifier())
                         }
@@ -61,7 +84,7 @@ struct ContentView: View {
                             // reel 2
                             ZStack{
                                 RealView()
-                                Image("gfx-bell")
+                                Image(symbols[reels[1]])
                                     .resizable()
                                     .modifier(ImageModifier())
                             }
@@ -70,7 +93,7 @@ struct ContentView: View {
                             // reel 3
                             ZStack{
                                 RealView()
-                                Image("gfx-bell")
+                                Image(symbols[reels[2]])
                                     .resizable()
                                     .modifier(ImageModifier())
                             }
@@ -80,7 +103,7 @@ struct ContentView: View {
                         
                         // spin button
                         Button {
-                            print("SPIN THE Reels")
+                            spinReels()
                         } label: {
                             Image("gfx-spin")
                                 .renderingMode(.original)
