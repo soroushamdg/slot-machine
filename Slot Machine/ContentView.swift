@@ -162,7 +162,7 @@ struct ContentView: View {
                 .padding()
                 .frame(maxWidth: 720)
             }
-            .sheet(isPresented: $showingInfoView, content: InfoView())
+            .sheet(isPresented: $showingInfoView, content: {InfoView()})
         }
     }
 }

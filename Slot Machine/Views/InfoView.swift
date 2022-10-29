@@ -25,7 +25,7 @@ struct InfoView: View {
                     FormRowView(title: "Designer", text: "Rober Patras")
                     FormRowView(title: "Music", text: "Dan Lebowits")
                     FormRowView(title: "Website", text: "soroush.am")
-                    FormRowView(title: "Copyright 2022 All rights reserved.", text: "Slot Machine")
+                    FormRowView(title: "Copyright 2022 All rights reserved.", text: "Slot Machine")
 
                 }
             }
