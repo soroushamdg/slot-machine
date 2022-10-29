@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     let symbols = ["gfx-bell","gfx-cherry","gfx-coin","gfx-grape","gfx-seven","gfx-strawberry"]
-    
+    let haptics = UINotificationFeedbackGenerator()
     @State private var reels : Array = [0,1,2]
     @State private var showingInfoView: Bool = false
     
@@ -35,7 +35,9 @@ struct ContentView: View {
         reels = reels.map({_ in
             Int.random(in: 0...symbols.count - 1)
         })
+        haptics.notificationOccurred(.success)
         playSound(sound: "spin", type: "mp3")
+        
     }
     
     func checkWinning(){
@@ -69,6 +71,7 @@ struct ContentView: View {
         betAmount = 20
         isActiveBet20 = true
         isActiveBet10 = false
+        haptics.notificationOccurred(.success)
         playSound(sound: "casino-chips", type: "mp3")
     }
     
@@ -77,6 +80,7 @@ struct ContentView: View {
         isActiveBet20 = false
         isActiveBet10 = true
         playSound(sound: "casino-chips", type: "mp3")
+        haptics.notificationOccurred(.success)
     }
     
     func isGameOver(){
