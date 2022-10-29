@@ -22,7 +22,7 @@ struct ContentView: View {
     @State private var isActiveBet20: Bool = false
     
     @State private var showingModal: Bool = false
-    
+    @State private var animatingSymbol: Bool = false
     
     // functions
     
@@ -127,7 +127,14 @@ struct ContentView: View {
                             Image(symbols[reels[0]])
                                 .resizable()
                                 .modifier(ImageModifier())
+                                .opacity(animatingSymbol ? 1 : 0)
+                                .offset(y: animatingSymbol ? 0 : -50)
+                                .animation(.easeOut(duration: Double.random(in: 0.5...0.7)))
+                                .onAppear(){
+                                    animatingSymbol.toggle()
+                                }
                         }
+                       
                         
                         HStack(alignment: .center,spacing: 0) {
                             // reel 2
@@ -136,7 +143,13 @@ struct ContentView: View {
                                 Image(symbols[reels[1]])
                                     .resizable()
                                     .modifier(ImageModifier())
+                                    .opacity(animatingSymbol ? 1 : 0)
+                                    .offset(y: animatingSymbol ? 0 : -50)
+                                    .animation(.easeOut(duration: Double.random(in: 0.7...0.9)))                                    .onAppear(){
+                                        animatingSymbol.toggle()
+                                    }
                             }
+                            
                             
                             Spacer()
                             // reel 3
@@ -145,6 +158,12 @@ struct ContentView: View {
                                 Image(symbols[reels[2]])
                                     .resizable()
                                     .modifier(ImageModifier())
+                                    .opacity(animatingSymbol ? 1 : 0)
+                                    .offset(y: animatingSymbol ? 0 : -50)
+                                    .animation(.easeOut(duration: Double.random(in: 0.9...1.1)))
+                                    .onAppear(){
+                                        animatingSymbol.toggle()
+                                    }
                             }
                         }
                         .frame(maxWidth: 500)
@@ -152,8 +171,16 @@ struct ContentView: View {
                         
                         // spin button
                         Button {
-                            
+                            // reset the animation
+                            withAnimation {
+                                animatingSymbol = false
+                            }
+                            // spin the reels
                             spinReels()
+                            // re-run the animation
+                            withAnimation {
+                                animatingSymbol = true
+                            }
                             
                             checkWinning()
                             
@@ -186,6 +213,7 @@ struct ContentView: View {
                             
                                 Image("gfx-casino-chips")
                                     .resizable()
+                                    .offset(x: isActiveBet20 ? 0 : 20)
                                     .opacity(isActiveBet20 ? 1 : 0)
                                     .modifier(CasinoChipsModifier())
                             
@@ -195,6 +223,7 @@ struct ContentView: View {
                             if isActiveBet10 {
                                 Image("gfx-casino-chips")
                                     .resizable()
+                                    .offset(x: isActiveBet10 ? 0 : 20)
                                     .opacity(isActiveBet10 ? 1 : 0)
                                     .modifier(CasinoChipsModifier())
                             }
