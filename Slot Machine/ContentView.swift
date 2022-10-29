@@ -14,6 +14,10 @@ struct ContentView: View {
     @State private var reels : Array = [0,1,2]
     @State private var showingInfoView: Bool = false
     
+    @State private var highscore: Int = 0
+    @State private var coins: Int = 100
+    @State private var betAmount: Int = 10
+    
     
     // functions
     
@@ -26,13 +30,28 @@ struct ContentView: View {
         })
     }
     
-    // check winning
+    func checkWinning(){
+        if reels.allSatisfy({ $0 == reels.first }) {
+            playerWins()
+            if coins > highscore {
+                newHighscore()
+            }
+        }else{
+            playerLoses()
+        }
+    }
     
-    // player wins
+    func playerWins(){
+        coins += betAmount * 10
+    }
     
-    // new high score
+    func newHighscore(){
+        highscore = coins
+    }
     
-    // player loses
+    func playerLoses(){
+        coins -= betAmount
+    }
     
     // game is over
     
@@ -52,7 +71,7 @@ struct ContentView: View {
                                 .scoreLabelStyle()
                                 .multilineTextAlignment(.trailing)
                             
-                            Text("100")
+                            Text("\(coins)")
                                 .scoreNumberStyle()
                                 .modifier(ScoreNumberModifier())
                                 
@@ -63,7 +82,7 @@ struct ContentView: View {
                         
                         HStack{
                             
-                            Text("200")
+                            Text("\(highscore)")
                                 .scoreNumberStyle()
                                 .modifier(ScoreNumberModifier())
                             Text("High\nScore".uppercased())
@@ -107,6 +126,7 @@ struct ContentView: View {
                         // spin button
                         Button {
                             spinReels()
+                            checkWinning()
                         } label: {
                             Image("gfx-spin")
                                 .renderingMode(.original)
