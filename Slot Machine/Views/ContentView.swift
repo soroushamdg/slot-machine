@@ -24,6 +24,8 @@ struct ContentView: View {
     @State private var showingModal: Bool = false
     @State private var animatingSymbol: Bool = false
     
+    @State private var animatingModal : Bool = false
+    
     // functions
     
     func spinReels(){
@@ -219,6 +221,8 @@ struct ContentView: View {
                             
                         }
                         
+                        Spacer()
+                        
                         HStack(alignment: .center,spacing: 10)  {
                             if isActiveBet10 {
                                 Image("gfx-casino-chips")
@@ -298,6 +302,8 @@ struct ContentView: View {
                                 
                                 Button {
                                     showingModal = false
+                                    animatingModal = false
+                                    activateBet10()
                                     coins = 100
                                     
                                 } label: {
@@ -323,6 +329,12 @@ struct ContentView: View {
                         .background(.white)
                         .cornerRadius(20)
                         .shadow(color: Color("ColorTransparentBlack"),radius: 6,x: 0,y: 8)
+                        .opacity($animatingModal.wrappedValue ? 1 : 0)
+                        .offset(y: $animatingModal.wrappedValue ? 0 : -100)
+                        .animation(Animation.spring(response: 0.6,dampingFraction: 1.0,blendDuration: 1.0))
+                        .onAppear(){
+                            animatingModal = true
+                        }
                     }
                 }
             }
